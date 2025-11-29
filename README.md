@@ -1,86 +1,149 @@
-🚆 SIH Railway Navigation System – Backend
+# 🚆 Railway Station Navigation System – Backend
+Backend for the **Smart India Hackathon (SIH)** project focused on providing real-time navigation for railway-station facilities. Built using **Node.js + TypeScript** within an intense **8-hour development sprint** during the hackathon.
 
-Backend for a Smart India Hackathon project focused on mapping and navigating railway-station facilities in real time.
+## 📌 Overview
+This backend powers a digital navigation system designed for railway stations.  
+The goal is to help passengers **quickly locate essential facilities** inside a station such as:
 
-📌 Project Overview
+- Toilets & Restrooms  
+- Food Counters  
+- Waiting Areas  
+- Platforms  
+- Ticket Counters  
+- Entry & Exit Gates  
+- Other Points of Interest (POIs)
 
-This backend powers a railway-station navigation system designed to help passengers quickly locate station facilities such as:
+The backend exposes REST APIs that allow the frontend to fetch station data, facility locations, and categories in a structured, scalable manner.
 
-Toilets & Restrooms
+Although the system was not fully completed or integrated due to the time constraints of SIH, the backend architecture, core modules, and main APIs were built with production-style standards.
 
-Food Counters & Shops
+## 🎯 SIH Hackathon Context
+This project was developed as part of **Smart India Hackathon (SIH)** under a strict, real-time challenge:
 
-Platforms
+⏱️ **8 hours of continuous coding**  
+🧩 Solve a real problem statement  
+🤝 Collaborate with a team  
+⚙️ Build a working prototype backend + frontend  
 
-Waiting Areas
+Despite the limited time, the backend was built with clean architecture, modular structure, and TypeScript-based type safety.
 
-Entry & Exit Gates
+## 🛠️ Tech Stack
+- **Node.js**
+- **Express.js**
+- **TypeScript**
+- **MongoDB / JSON mock data**
+- **REST API Architecture**
 
-Other Station Services
-
-The goal was to build an API-driven backend that allows the frontend to fetch facility locations, station details, and navigation-relevant data.
-
-This project was developed during the Smart India Hackathon (SIH) under a strict 8-hour development window, as part of an on-spot problem statement.
-
-🛠️ Tech Stack
-
-Node.js
-
-Express.js
-
-TypeScript
-
-🚀 Features
-
-✔ Modular Node.js + TypeScript backend
-✔ API endpoints for station facilities
-✔ Geo-location & category-based filtering
-✔ Validation middleware
-✔ Scalable folder structure
-✔ Ready for frontend integration
-
-📡 API Endpoints (Sample)
-GET /stations/:id/facilities
-
-Returns all facilities (toilets, food, platforms, exits, etc.) for a given station.
-
-GET /stations/:id/facilities/:type
-
-Filter facilities by category.
-
-POST /stations/:id/facilities
-
-Add a new facility (admin use).
-
-⚠️ Hackathon Context
-
-This backend was developed during SIH with an 8-hour coding window.
-Due to time limitations:
-
-Backend was not fully completed
-
-Full frontend integration was not possible
-
-However, the architecture, base models, and API structure were completed and functional
-
-Despite the constraints, the project demonstrates the core backend architecture and the approach taken under time pressure.
-
-📎 GitHub Repository
-
-👉 https://github.com/Praborkar/SIH
-
-👨‍💻 Contributors
-
-Prabor Kar – Backend (Node.js/TypeScript)
-
+## 📂 Folder Structure
+```
 .
-.
-.
-.
+├── src/
+│   ├── controllers/      # Request handlers
+│   ├── routes/           # API route definitions
+│   ├── services/         # Business logic
+│   ├── models/           # Data models / schemas
+│   ├── middleware/       # Validation, error handling, auth
+│   ├── config/           # DB, environment configs
+│   └── utils/            # Helpers & utilities
+├── package.json
+├── tsconfig.json
+├── README.md
+└── .env (ignored)
+```
 
-📝 License
+## 🚀 Key Features
+✔ Modular Node.js + TypeScript architecture  
+✔ API endpoints for facility listings  
+✔ Station-wise and category-wise facility filtering  
+✔ Scalable folder layout for future development  
+✔ Validation middleware for clean data flow  
+✔ Lightweight and easy to extend  
+✔ Ready for real-time navigation integration  
 
+## 📡 API Endpoints
+
+### GET /stations
+Returns list of available stations.
+
+### GET /stations/:stationId
+Returns metadata for a specific station.
+
+### GET /stations/:stationId/facilities
+Fetch all facilities of a station.
+
+### GET /stations/:stationId/facilities/:type
+Fetch facilities filtered by type (toilet, food, platform, exit, etc.)
+
+### POST /stations/:stationId/facilities
+Admin-level action to add POIs.
+
+## 🗄️ Sample Facility Schema
+```
+{
+  id: string;
+  name: string;
+  type: 'toilet' | 'food' | 'platform' | 'exit' | 'waiting' | 'other';
+  location: {
+    lat: number;
+    lng: number;
+    floor: number;
+  };
+  description?: string;
+}
+```
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository  
+```
+git clone https://github.com/Praborkar/SIH
+cd SIH
+```
+
+### 2️⃣ Install Dependencies  
+```
+npm install
+```
+
+### 3️⃣ Create Environment File  
+Create `.env`:
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_url
+```
+
+### 4️⃣ Run in Development Mode  
+```
+npm run dev
+```
+
+### 5️⃣ Build & Run  
+```
+npm run build
+npm start
+```
+
+## 📈 What’s Completed
+- Backend structure  
+- Core routes & controllers  
+- Facility models  
+- Base database design  
+- Basic API communication attempt  
+- Modular code layout  
+
+## ❗What’s Pending
+- Full frontend integration  
+- Navigation algorithms  
+- Admin dashboard  
+- Authentication system  
+- Database indexing
+
+## 📎 GitHub Repository
+https://github.com/Praborkar/SIH
+
+## 👨‍💻 Contributors
+- **Prabor Kar** – Backend (Node.js + TypeScript)
+
+## 📄 License
 This project is for educational and hackathon purposes only.
-MongoDB (or your DB used)
-
-REST API Architecture
