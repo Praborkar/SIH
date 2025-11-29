@@ -1,21 +1,86 @@
-# 🚀 Smart India Hackathon Project – [Project Title]
+🚆 SIH Railway Navigation System – Backend
 
-This repository contains the in-development source code and resources for our submission to **Smart India Hackathon (SIH)** [Year]. The solution addresses the problem statement: **"[Problem Statement Title or ID]"** provided by [Ministry/Organization].
+Backend for a Smart India Hackathon project focused on mapping and navigating railway-station facilities in real time.
 
-...
+📌 Project Overview
 
-## 👥 Team Members
+This backend powers a railway-station navigation system designed to help passengers quickly locate station facilities such as:
 
-- **Aditya** – Team Leader / Full-Stack Developer  
-- **Prabor Kar** – Backend & API Integration  
-- [Member 3 Name] – Frontend Developer  
-- [Member 4 Name] – UI/UX Designer  
-- [Member 5 Name] – QA / Documentation Lead  
+Toilets & Restrooms
 
-...
+Food Counters & Shops
 
-## 📬 Contact
+Platforms
 
-📧 Email: [Your team email]  
-🔗 GitHub: [https://github.com/2003Aditya/SIH](https://github.com/2003Aditya/SIH)
+Waiting Areas
 
+Entry & Exit Gates
+
+Other Station Services
+
+The goal was to build an API-driven backend that allows the frontend to fetch facility locations, station details, and navigation-relevant data.
+
+This project was developed during the Smart India Hackathon (SIH) under a strict 8-hour development window, as part of an on-spot problem statement.
+
+🛠️ Tech Stack
+
+Node.js
+
+Express.js
+
+TypeScript
+
+🚀 Features
+
+✔ Modular Node.js + TypeScript backend
+✔ API endpoints for station facilities
+✔ Geo-location & category-based filtering
+✔ Validation middleware
+✔ Scalable folder structure
+✔ Ready for frontend integration
+
+📡 API Endpoints (Sample)
+GET /stations/:id/facilities
+
+Returns all facilities (toilets, food, platforms, exits, etc.) for a given station.
+
+GET /stations/:id/facilities/:type
+
+Filter facilities by category.
+
+POST /stations/:id/facilities
+
+Add a new facility (admin use).
+
+⚠️ Hackathon Context
+
+This backend was developed during SIH with an 8-hour coding window.
+Due to time limitations:
+
+Backend was not fully completed
+
+Full frontend integration was not possible
+
+However, the architecture, base models, and API structure were completed and functional
+
+Despite the constraints, the project demonstrates the core backend architecture and the approach taken under time pressure.
+
+📎 GitHub Repository
+
+👉 https://github.com/Praborkar/SIH
+
+👨‍💻 Contributors
+
+Prabor Kar – Backend (Node.js/TypeScript)
+
+.
+.
+.
+.
+
+📝 License
+
+This project is for educational and hackathon purposes only.
+MongoDB (or your DB used)
+
+REST API Architecture
